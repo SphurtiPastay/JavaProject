@@ -12,6 +12,7 @@ public class BodySurfaceAreaCalculator extends JFrame implements ActionListener 
     public BodySurfaceAreaCalculator() {
         super("Body Surface Area Calculator");
 
+        // set up labels and text fields
         JLabel heightLabel = new JLabel("Height (in cm):");
         heightField = new JTextField(5);
         JLabel weightLabel = new JLabel("Weight (in kg):");
@@ -20,9 +21,11 @@ public class BodySurfaceAreaCalculator extends JFrame implements ActionListener 
         bsaField = new JTextField(5);
         bsaField.setEditable(false);
 
+        // set up calculate button
         calculateButton = new JButton("Calculate");
         calculateButton.addActionListener(this);
 
+        // set up panel and add components
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(3, 2));
         panel.add(heightLabel);
@@ -32,9 +35,23 @@ public class BodySurfaceAreaCalculator extends JFrame implements ActionListener 
         panel.add(bsaLabel);
         panel.add(bsaField);
 
+        // add panel and calculate button to content pane
         getContentPane().add(panel, BorderLayout.CENTER);
         getContentPane().add(calculateButton, BorderLayout.SOUTH);
 
+        // set background color
+        panel.setBackground(new Color(220, 220, 220));
+        calculateButton.setBackground(new Color(64, 128, 128));
+        calculateButton.setForeground(Color.WHITE);
+        calculateButton.setFocusPainted(false);
+        heightLabel.setForeground(Color.BLACK);
+        weightLabel.setForeground(Color.BLACK);
+        bsaLabel.setForeground(Color.BLACK);
+
+        // set frame properties
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(false);
+        setLocationRelativeTo(null);
         pack();
         setVisible(true);
     }
