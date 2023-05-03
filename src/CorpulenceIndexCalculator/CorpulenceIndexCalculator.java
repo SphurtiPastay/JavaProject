@@ -12,30 +12,43 @@ public class CorpulenceIndexCalculator extends JFrame implements ActionListener 
     public CorpulenceIndexCalculator() {
         super("Corpulence Index Calculator");
 
+        // Set background color
+        getContentPane().setBackground(new Color(120, 220, 220));
+
         JLabel weightLabel = new JLabel("Weight (in kg):");
+        weightLabel.setForeground(new Color(60, 60, 60)); // Set label color
         weightField = new JTextField(5);
         JLabel heightLabel = new JLabel("Height (in cm):");
+        heightLabel.setForeground(new Color(60, 60, 60)); // Set label color
         heightField = new JTextField(5);
         JLabel corpulenceIndexLabel = new JLabel("Corpulence Index:");
+        corpulenceIndexLabel.setForeground(new Color(60, 60, 60)); // Set label color
         corpulenceIndexField = new JTextField(5);
         corpulenceIndexField.setEditable(false);
 
         calculateButton = new JButton("Calculate");
+        calculateButton.setBackground(new Color(64, 128, 128)); // Set button color
+        calculateButton.setForeground(Color.WHITE); // Set button text color
         calculateButton.addActionListener(this);
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(3, 2));
+        panel.setBackground(new Color(240, 240, 240)); // Set panel background color
+        panel.setLayout(new GridLayout(3, 2, 10,10));
         panel.add(weightLabel);
         panel.add(weightField);
         panel.add(heightLabel);
         panel.add(heightField);
         panel.add(corpulenceIndexLabel);
         panel.add(corpulenceIndexField);
+        panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
         getContentPane().add(panel, BorderLayout.CENTER);
         getContentPane().add(calculateButton, BorderLayout.SOUTH);
 
-        pack();
+        // Set frame properties
+        setSize(300, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 

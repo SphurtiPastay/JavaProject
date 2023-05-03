@@ -27,20 +27,22 @@ public class BodySurfaceAreaCalculator extends JFrame implements ActionListener 
 
         // set up panel and add components
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(3, 2));
+        panel.setLayout(new GridLayout(3, 2, 10,10));
         panel.add(heightLabel);
         panel.add(heightField);
         panel.add(weightLabel);
         panel.add(weightField);
         panel.add(bsaLabel);
         panel.add(bsaField);
+        panel.setBackground(new Color(240,240,240));
+        panel.setBorder(BorderFactory.createEmptyBorder(20, 20,20, 20));
 
         // add panel and calculate button to content pane
         getContentPane().add(panel, BorderLayout.CENTER);
         getContentPane().add(calculateButton, BorderLayout.SOUTH);
 
         // set background color
-        panel.setBackground(new Color(220, 220, 220));
+        //panel.setBackground(new Color(220, 220, 220));
         calculateButton.setBackground(new Color(64, 128, 128));
         calculateButton.setForeground(Color.WHITE);
         calculateButton.setFocusPainted(false);
@@ -52,6 +54,7 @@ public class BodySurfaceAreaCalculator extends JFrame implements ActionListener 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
+        getContentPane().setBackground(new Color(220, 220, 220));
         pack();
         setVisible(true);
     }
