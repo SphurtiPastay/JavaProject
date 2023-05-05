@@ -73,7 +73,8 @@ public class LoginRegistrationSystem extends JFrame implements ActionListener {
                 Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaproject", "root",
                         "12345");
                 PreparedStatement preparedStatement = connection
-                        .prepareStatement("SELECT * FROM users WHERE BINARY username=? AND BINARY password=?");
+                        .prepareStatement("SELECT * FROM users WHERE BINARY username=? AND BINARY password=?"); 
+                        
                 preparedStatement.setString(1, username);
                 preparedStatement.setString(2, password);
                 ResultSet resultSet = preparedStatement.executeQuery();
